@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.Controllers.CtrlsForAgreements.EnterCtrl">
+    <Button text="Исполнить" onAction="#button1Clicked" />
+
+    <TextField fx:id="v3" promptText="customer_code" />
+    <TextField fx:id="v4" promptText="executor_code" />
+    <TextField fx:id="v5" promptText="contract_type_code" />
+    <TextField fx:id="v6" promptText="code_org" />
+    <TextField fx:id="v7" promptText="execution_code" />
+    <TextField fx:id="v8" promptText="code_nds" />
+    <TextField fx:id="v9" promptText="date_execution" />
+
+</VBox>
