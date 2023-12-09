@@ -8,7 +8,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
-<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.Controllers.CtrlsForAgreementTypes.UpdateCtrl">
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.Controllers.CtrlForAgreementTypes.UpdateCtrl">
 
     <Button text="Исполнить" onAction="#button1Clicked" />
 

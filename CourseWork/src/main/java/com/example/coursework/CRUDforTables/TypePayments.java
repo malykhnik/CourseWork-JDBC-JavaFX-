@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class AgreementType implements TableWith2ColsCRUD {
+public class TypePayments implements TableWith2ColsCRUD {
     private ConnectionToDB ctDB;
 
     private void connect() {
@@ -17,17 +17,17 @@ public class AgreementType implements TableWith2ColsCRUD {
     }
 
     @Override
-    public void createData(String type_name) {
+    public void createData(String name_type_payment) {
         connect();
 
         try {
             Connection connection = DriverManager.getConnection(ctDB.getUrl(),
                     ctDB.getUsername(), ctDB.getPassword());
 
-            String sqlQuery = "INSERT INTO agreement_types (type_name) VALUES (?)";
+            String sqlQuery = "INSERT INTO type_payments (name_type_payment) VALUES (?)";
             PreparedStatement statement = connection.prepareStatement(sqlQuery);
 
-            statement.setString(1, type_name);
+            statement.setString(1, name_type_payment);
 
             statement.executeUpdate();
 
@@ -39,13 +39,13 @@ public class AgreementType implements TableWith2ColsCRUD {
     }
 
     @Override
-    public void updateData(String type_name, String condition, String newVal) {
+    public void updateData(String name_type_payment, String condition, String newVal) {
         connect();
         try {
             Connection connection = DriverManager.getConnection(ctDB.getUrl(),
                     ctDB.getUsername(), ctDB.getPassword());
 
-            String sqlQuery = "UPDATE agreement_types SET " + type_name + " = ?" + " WHERE " + condition;
+            String sqlQuery = "UPDATE type_payments SET " + name_type_payment + " = ?" + " WHERE " + condition;
             PreparedStatement statement = connection.prepareStatement(sqlQuery);
             statement.setString(1, newVal);
 
@@ -65,9 +65,9 @@ public class AgreementType implements TableWith2ColsCRUD {
             Connection connection = DriverManager.getConnection(ctDB.getUrl(),
                     ctDB.getUsername(), ctDB.getPassword());
 
-            String sqlQuery = "DELETE FROM agreement_types WHERE " + columnName + " = ?";
+            String sqlQuery = "DELETE FROM type_payments WHERE " + columnName + " = ?";
             PreparedStatement statement = connection.prepareStatement(sqlQuery);
-            if (columnName.equals("code_contract")) {
+            if (columnName.equals("code_type_payment")) {
                 statement.setInt(1, Integer.parseInt(value));
             } else {
                 statement.setString(1, value);
@@ -81,4 +81,5 @@ public class AgreementType implements TableWith2ColsCRUD {
             e.printStackTrace();
         }
     }
+
 }

@@ -8,10 +8,10 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
-<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.Controllers.CtrlForAgreementTypes.EnterCtrl">
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.Controllers.CtrlsForRatesNDS.EnterCtrl">
 
     <Button text="Исполнить" onAction="#button1Clicked" />
 
-    <TextField fx:id="agreementTypesEnter" promptText="Введите данные(type_name)" />
+    <TextField fx:id="txtField" promptText="Введите данные(percent)" />
 
 </VBox>

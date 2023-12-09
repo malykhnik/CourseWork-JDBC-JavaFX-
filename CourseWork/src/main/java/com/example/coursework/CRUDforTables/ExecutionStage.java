@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class AgreementType implements TableWith2ColsCRUD {
+public class ExecutionStage implements TableWith2ColsCRUD {
     private ConnectionToDB ctDB;
 
     private void connect() {
@@ -17,17 +17,17 @@ public class AgreementType implements TableWith2ColsCRUD {
     }
 
     @Override
-    public void createData(String type_name) {
+    public void createData(String stage_name) {
         connect();
 
         try {
             Connection connection = DriverManager.getConnection(ctDB.getUrl(),
                     ctDB.getUsername(), ctDB.getPassword());
 
-            String sqlQuery = "INSERT INTO agreement_types (type_name) VALUES (?)";
+            String sqlQuery = "INSERT INTO execution_stages (stage_name) VALUES (?)";
             PreparedStatement statement = connection.prepareStatement(sqlQuery);
 
-            statement.setString(1, type_name);
+            statement.setString(1, stage_name);
 
             statement.executeUpdate();
 
@@ -45,7 +45,7 @@ public class AgreementType implements TableWith2ColsCRUD {
             Connection connection = DriverManager.getConnection(ctDB.getUrl(),
                     ctDB.getUsername(), ctDB.getPassword());
 
-            String sqlQuery = "UPDATE agreement_types SET " + type_name + " = ?" + " WHERE " + condition;
+            String sqlQuery = "UPDATE execution_stages SET " + type_name + " = ?" + " WHERE " + condition;
             PreparedStatement statement = connection.prepareStatement(sqlQuery);
             statement.setString(1, newVal);
 
@@ -65,9 +65,9 @@ public class AgreementType implements TableWith2ColsCRUD {
             Connection connection = DriverManager.getConnection(ctDB.getUrl(),
                     ctDB.getUsername(), ctDB.getPassword());
 
-            String sqlQuery = "DELETE FROM agreement_types WHERE " + columnName + " = ?";
+            String sqlQuery = "DELETE FROM execution_stages WHERE " + columnName + " = ?";
             PreparedStatement statement = connection.prepareStatement(sqlQuery);
-            if (columnName.equals("code_contract")) {
+            if (columnName.equals("code_execution")) {
                 statement.setInt(1, Integer.parseInt(value));
             } else {
                 statement.setString(1, value);

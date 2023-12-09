@@ -8,8 +8,19 @@ module com.example.coursework {
     exports com.example.coursework;
     exports com.example.coursework.Controllers;
     opens com.example.coursework.Controllers to javafx.fxml;
+
     exports com.example.coursework.Controllers.CtrlsForAgreements;
     opens com.example.coursework.Controllers.CtrlsForAgreements to javafx.fxml;
-    exports com.example.coursework.Controllers.CtrlsForAgreementTypes;
-    opens com.example.coursework.Controllers.CtrlsForAgreementTypes to javafx.fxml;
+
+    exports com.example.coursework.Controllers.CtrlForAgreementTypes;
+    opens com.example.coursework.Controllers.CtrlForAgreementTypes to javafx.fxml;
+
+    exports com.example.coursework.Controllers.CtrlsForExecutionStages;
+    opens com.example.coursework.Controllers.CtrlsForExecutionStages to javafx.fxml;
+
+    exports com.example.coursework.Controllers.CtrlsForRatesNDS;
+    opens com.example.coursework.Controllers.CtrlsForRatesNDS to javafx.fxml;
+
+    exports com.example.coursework.Controllers.CtrlsForTypePayments;
+    opens com.example.coursework.Controllers.CtrlsForTypePayments to javafx.fxml;
 }

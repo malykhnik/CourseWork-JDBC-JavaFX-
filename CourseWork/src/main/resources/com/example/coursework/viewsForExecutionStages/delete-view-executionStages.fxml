@@ -8,20 +8,20 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
-<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.Controllers.CtrlForAgreementTypes.DeleteCtrl">
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.Controllers.CtrlsForExecutionStages.DeleteCtrl">
 
     <Button text="Исполнить" onAction="#button1Clicked" />
 
     <ChoiceBox fx:id="choiceBox">
         <items>
             <FXCollections fx:factory="observableArrayList">
-                <String fx:value="code_contract" />
-                <String fx:value="type_name" />
+                <String fx:value="code_execution" />
+                <String fx:value="stage_name" />
             </FXCollections>
         </items>
     </ChoiceBox>
 
-    <TextField fx:id="agreementTypesDelete" promptText="Введите данные" />
+    <TextField fx:id="txtField" promptText="Введите данные" />
 
 
 </VBox>
