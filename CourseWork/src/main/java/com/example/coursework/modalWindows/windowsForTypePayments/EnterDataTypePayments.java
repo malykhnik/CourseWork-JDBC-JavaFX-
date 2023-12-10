@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class EnterDataTypePayments {
     public static void newWindow(String title) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("viewsForTypePayments/enter-view-typePayments.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("views/viewsForTypePayments/enter-view-typePayments.fxml"));
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.Controllers.CtrlsForAgreements.DeleteCtrl">
+
+    <Button text="Исполнить" onAction="#button1Clicked" />
+
+    <ChoiceBox fx:id="choiceBox3">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="contract_code" />
+                <String fx:value="customer_code" />
+                <String fx:value="executor_code" />
+                <String fx:value="contract_type_code" />
+                <String fx:value="code_org" />
+                <String fx:value="execution_code" />
+                <String fx:value="code_nds" />
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+
+    <TextField fx:id="agreementsDelete" promptText="Введите данные" />
+
+
+</VBox>

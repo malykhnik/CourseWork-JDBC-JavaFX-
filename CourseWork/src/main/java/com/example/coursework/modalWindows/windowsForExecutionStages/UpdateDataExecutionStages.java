@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class UpdateDataExecutionStages {
     public static void newWindow(String title) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("viewsForExecutionStages/update-view-executionStages.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("views/viewsForExecutionStages/update-view-executionStages.fxml"));
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
 

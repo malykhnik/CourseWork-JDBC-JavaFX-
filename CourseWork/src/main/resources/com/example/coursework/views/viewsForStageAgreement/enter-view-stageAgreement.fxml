@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.Controllers.CtrlsForStageAgreement.EnterCtrl">
+
+    <Button text="Исполнить" onAction="#button1Clicked" />
+
+    <TextField fx:id="contract_code" promptText="Введите данные(contract_code)" />
+    <TextField fx:id="stage_num" promptText="Введите данные(stage_num)" />
+    <TextField fx:id="date_execution" promptText="Введите данные(date_execution(dd.mm.yyyy))" />
+    <TextField fx:id="code_execution" promptText="Введите данные(code_execution)" />
+    <TextField fx:id="stage_amount" promptText="Введите данные(stage_amount)" />
+    <TextField fx:id="advance_amount" promptText="Введите данные(advance_amount)" />
+
+</VBox>

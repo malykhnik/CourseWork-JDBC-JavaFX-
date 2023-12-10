@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class DeleteDataAgreementTypes {
     public static void newWindow(String title) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("viewsForAgreementTypes/delete-view-agreementTypes.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("views/viewsForAgreementTypes/delete-view-agreementTypes.fxml"));
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
 

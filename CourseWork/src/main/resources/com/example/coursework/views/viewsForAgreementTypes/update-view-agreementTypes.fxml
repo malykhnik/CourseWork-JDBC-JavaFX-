@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.Controllers.CtrlForAgreementTypes.UpdateCtrl">
+
+    <Button text="Исполнить" onAction="#button1Clicked" />
+
+    <TextField fx:id="condition" promptText="Введите условие для обновления (code_contract... или type_name...)" />
+    <TextField fx:id="agreementTypesUpdate" promptText="Введите данные(type_name)" />
+
+
+</VBox>

@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class UpdateDataRatesNDS {
     public static void newWindow(String title) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("viewsForRatesNDS/update-view-ratesNDS.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("views/viewsForRatesNDS/update-view-ratesNDS.fxml"));
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
 

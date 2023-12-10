@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class DeleteDataTypePayments {
     public static void newWindow(String title) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("viewsForTypePayments/delete-view-typePayments.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("views/viewsForTypePayments/delete-view-typePayments.fxml"));
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
 

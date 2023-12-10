@@ -10,9 +10,15 @@ import com.example.coursework.modalWindows.windowsForAgreementTypes.DeleteDataAg
 import com.example.coursework.modalWindows.windowsForExecutionStages.DeleteDataExecutionStages;
 import com.example.coursework.modalWindows.windowsForExecutionStages.EnterDataExecutionStages;
 import com.example.coursework.modalWindows.windowsForExecutionStages.UpdateDataExecutionStages;
+import com.example.coursework.modalWindows.windowsForPayment.DeleteDataPayment;
+import com.example.coursework.modalWindows.windowsForPayment.EnterDataPayment;
+import com.example.coursework.modalWindows.windowsForPayment.UpdateDataPayment;
 import com.example.coursework.modalWindows.windowsForRatesNDS.DeleteDataRatesNDS;
 import com.example.coursework.modalWindows.windowsForRatesNDS.EnterDataRatesNDS;
 import com.example.coursework.modalWindows.windowsForRatesNDS.UpdateDataRatesNDS;
+import com.example.coursework.modalWindows.windowsForStageAgreement.DeleteDataStageAgreement;
+import com.example.coursework.modalWindows.windowsForStageAgreement.EnterDataStageAgreement;
+import com.example.coursework.modalWindows.windowsForStageAgreement.UpdateDataStageAgreement;
 import com.example.coursework.modalWindows.windowsForTypePayments.DeleteDataTypePayments;
 import com.example.coursework.modalWindows.windowsForTypePayments.EnterDataTypePayments;
 import com.example.coursework.modalWindows.windowsForTypePayments.UpdateDataTypePayments;
@@ -92,6 +98,30 @@ public class HelloController {
                     break;
                 case "Изменить":
                     UpdateDataTypePayments.newWindow("Обновление данных");
+                    break;
+            }
+        } else if (table.equals("Оплата")) {
+            switch (action) {
+                case "Добавить":
+                    EnterDataPayment.newWindow("Ввод данных");
+                    break;
+                case "Удалить":
+                    DeleteDataPayment.newWindow("Удаление данных");
+                    break;
+                case "Изменить":
+                    UpdateDataPayment.newWindow("Обновление данных");
+                    break;
+            }
+        } else if (table.equals("Этапы договоров")) {
+            switch (action) {
+                case "Добавить":
+                    EnterDataStageAgreement.newWindow("Ввод данных");
+                    break;
+                case "Удалить":
+                    DeleteDataStageAgreement.newWindow("Удаление данных");
+                    break;
+                case "Изменить":
+                    UpdateDataStageAgreement.newWindow("Обновление данных");
                     break;
             }
         }

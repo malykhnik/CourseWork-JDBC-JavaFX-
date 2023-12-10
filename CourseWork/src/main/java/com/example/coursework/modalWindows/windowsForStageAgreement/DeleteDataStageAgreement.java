@@ -1,4 +1,4 @@
-package com.example.coursework.modalWindows.windowsForExecutionStages;
+package com.example.coursework.modalWindows.windowsForStageAgreement;
 
 import com.example.coursework.HelloApplication;
 import javafx.fxml.FXMLLoader;
@@ -8,9 +8,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class DeleteDataExecutionStages {
+public class DeleteDataStageAgreement {
     public static void newWindow(String title) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("views/viewsForExecutionStages/delete-view-executionStages.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("views/viewsForStageAgreement/delete-view-stageAgreement.fxml"));
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
 

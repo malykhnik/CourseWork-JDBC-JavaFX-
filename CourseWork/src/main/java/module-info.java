@@ -23,4 +23,10 @@ module com.example.coursework {
 
     exports com.example.coursework.Controllers.CtrlsForTypePayments;
     opens com.example.coursework.Controllers.CtrlsForTypePayments to javafx.fxml;
+
+    exports com.example.coursework.Controllers.CtrlsForPayment;
+    opens com.example.coursework.Controllers.CtrlsForPayment to javafx.fxml;
+
+    exports com.example.coursework.Controllers.CtrlsForStageAgreement;
+    opens com.example.coursework.Controllers.CtrlsForStageAgreement to javafx.fxml;
 }

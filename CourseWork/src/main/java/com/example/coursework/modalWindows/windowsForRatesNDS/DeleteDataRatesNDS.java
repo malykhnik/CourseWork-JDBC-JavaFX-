@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class DeleteDataRatesNDS {
     public static void newWindow(String title) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("viewsForRatesNDS/delete-view-ratesNDS.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("views/viewsForRatesNDS/delete-view-ratesNDS.fxml"));
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
 
