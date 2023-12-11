@@ -29,4 +29,7 @@ module com.example.coursework {
 
     exports com.example.coursework.Controllers.CtrlsForStageAgreement;
     opens com.example.coursework.Controllers.CtrlsForStageAgreement to javafx.fxml;
+
+    exports com.example.coursework.Controllers.CtrlForReports;
+    opens com.example.coursework.Controllers.CtrlForReports to javafx.fxml;
 }

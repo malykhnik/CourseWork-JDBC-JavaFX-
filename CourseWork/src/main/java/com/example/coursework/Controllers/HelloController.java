@@ -1,27 +1,30 @@
 package com.example.coursework.Controllers;
 
-import com.example.coursework.modalWindows.windowsForAgreementTypes.EnterDataAgreementTypes;
-import com.example.coursework.modalWindows.windowsForAgreementTypes.UpdateDataAgreementTypes;
-import com.example.coursework.modalWindows.windowsForAgreements.DeleteDataAgreements;
-import com.example.coursework.modalWindows.windowsForAgreements.EnterDataAgreements;
-import com.example.coursework.modalWindows.windowsForAgreements.UpdateDataAgreements;
+import com.example.coursework.modalWindows.windowsForReports.ReportFirst;
+import com.example.coursework.modalWindows.windowsForReports.ReportSecond;
+import com.example.coursework.modalWindows.windowsForReports.ReportThird;
+import com.example.coursework.modalWindows.windowsForTables.windowsForAgreementTypes.EnterDataAgreementTypes;
+import com.example.coursework.modalWindows.windowsForTables.windowsForAgreementTypes.UpdateDataAgreementTypes;
+import com.example.coursework.modalWindows.windowsForTables.windowsForAgreements.DeleteDataAgreements;
+import com.example.coursework.modalWindows.windowsForTables.windowsForAgreements.EnterDataAgreements;
+import com.example.coursework.modalWindows.windowsForTables.windowsForAgreements.UpdateDataAgreements;
 
-import com.example.coursework.modalWindows.windowsForAgreementTypes.DeleteDataAgreementTypes;
-import com.example.coursework.modalWindows.windowsForExecutionStages.DeleteDataExecutionStages;
-import com.example.coursework.modalWindows.windowsForExecutionStages.EnterDataExecutionStages;
-import com.example.coursework.modalWindows.windowsForExecutionStages.UpdateDataExecutionStages;
-import com.example.coursework.modalWindows.windowsForPayment.DeleteDataPayment;
-import com.example.coursework.modalWindows.windowsForPayment.EnterDataPayment;
-import com.example.coursework.modalWindows.windowsForPayment.UpdateDataPayment;
-import com.example.coursework.modalWindows.windowsForRatesNDS.DeleteDataRatesNDS;
-import com.example.coursework.modalWindows.windowsForRatesNDS.EnterDataRatesNDS;
-import com.example.coursework.modalWindows.windowsForRatesNDS.UpdateDataRatesNDS;
-import com.example.coursework.modalWindows.windowsForStageAgreement.DeleteDataStageAgreement;
-import com.example.coursework.modalWindows.windowsForStageAgreement.EnterDataStageAgreement;
-import com.example.coursework.modalWindows.windowsForStageAgreement.UpdateDataStageAgreement;
-import com.example.coursework.modalWindows.windowsForTypePayments.DeleteDataTypePayments;
-import com.example.coursework.modalWindows.windowsForTypePayments.EnterDataTypePayments;
-import com.example.coursework.modalWindows.windowsForTypePayments.UpdateDataTypePayments;
+import com.example.coursework.modalWindows.windowsForTables.windowsForAgreementTypes.DeleteDataAgreementTypes;
+import com.example.coursework.modalWindows.windowsForTables.windowsForExecutionStages.DeleteDataExecutionStages;
+import com.example.coursework.modalWindows.windowsForTables.windowsForExecutionStages.EnterDataExecutionStages;
+import com.example.coursework.modalWindows.windowsForTables.windowsForExecutionStages.UpdateDataExecutionStages;
+import com.example.coursework.modalWindows.windowsForTables.windowsForPayment.DeleteDataPayment;
+import com.example.coursework.modalWindows.windowsForTables.windowsForPayment.EnterDataPayment;
+import com.example.coursework.modalWindows.windowsForTables.windowsForPayment.UpdateDataPayment;
+import com.example.coursework.modalWindows.windowsForTables.windowsForRatesNDS.DeleteDataRatesNDS;
+import com.example.coursework.modalWindows.windowsForTables.windowsForRatesNDS.EnterDataRatesNDS;
+import com.example.coursework.modalWindows.windowsForTables.windowsForRatesNDS.UpdateDataRatesNDS;
+import com.example.coursework.modalWindows.windowsForTables.windowsForStageAgreement.DeleteDataStageAgreement;
+import com.example.coursework.modalWindows.windowsForTables.windowsForStageAgreement.EnterDataStageAgreement;
+import com.example.coursework.modalWindows.windowsForTables.windowsForStageAgreement.UpdateDataStageAgreement;
+import com.example.coursework.modalWindows.windowsForTables.windowsForTypePayments.DeleteDataTypePayments;
+import com.example.coursework.modalWindows.windowsForTables.windowsForTypePayments.EnterDataTypePayments;
+import com.example.coursework.modalWindows.windowsForTables.windowsForTypePayments.UpdateDataTypePayments;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -29,6 +32,8 @@ import javafx.scene.control.ChoiceBox;
 import java.io.IOException;
 
 public class HelloController {
+    @FXML
+    public ChoiceBox<String> choiceBox3; //выбор отчета
     @FXML
     private ChoiceBox<String> choiceBox1; //Выбор действия
     @FXML
@@ -126,5 +131,15 @@ public class HelloController {
             }
         }
 
+    }
+
+    public void button3Clicked(ActionEvent actionEvent) throws IOException {
+        if (choiceBox3.getValue().equals("Отчет по договорам")) {
+            ReportFirst.newWindow("Отчет по договорам");
+        } else if (choiceBox3.getValue().equals("Плановые платежи")) {
+            ReportSecond.newWindow("Плановые платежи");
+        } else {
+            ReportThird.newWindow("Фактические платежи");
+        }
     }
 }
