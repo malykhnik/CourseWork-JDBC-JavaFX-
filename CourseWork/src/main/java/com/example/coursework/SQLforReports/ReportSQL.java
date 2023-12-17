@@ -3,8 +3,12 @@ package com.example.coursework.SQLforReports;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.*;
+import java.util.Map;
+
 import com.example.coursework.ConnectionToDB;
 import com.example.coursework.interfaces.SQLForReports;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextField;
 
 public class ReportSQL implements SQLForReports {
     private ConnectionToDB ctDB;
@@ -13,23 +17,36 @@ public class ReportSQL implements SQLForReports {
         ctDB = new ConnectionToDB("jdbc:postgresql://localhost:5432/course_work",
                 "postgres", "postgres");
     }
+
     @Override
-    public void firstReport() {
+    public void firstReport(String column, String filter, String column2, String where) {
         connect();
         try {
             Connection connection = DriverManager.getConnection(ctDB.getUrl(),
                     ctDB.getUsername(), ctDB.getPassword());
-            Statement statement = connection.createStatement();
 
-            String sqlQuery = "SELECT a.contract_code, sa.stage_num, sa.date_execution AS stage_date, es.stage_name, sa.stage_amount, sa.advance_amount, p.date_payment, p.sum_payment " +
+            StringBuilder sqlQuery = new StringBuilder("SELECT a.contract_code, sa.stage_num, sa.date_execution AS stage_date, es.stage_name, sa.stage_amount, sa.advance_amount, p.date_payment, p.sum_payment " +
                     "FROM agreements AS a " +
-                    "LEFT JOIN stage_agreement AS sa ON a.contract_code = sa.contract_code " +
-                    "LEFT JOIN execution_stages AS es ON sa.code_execution = es.code_execution " +
-                    "LEFT JOIN payment AS p ON a.contract_code = p.contract_code " +
-                    "ORDER BY a.contract_code, sa.stage_num";
-            ResultSet resultSet = statement.executeQuery(sqlQuery);
+                    "JOIN stage_agreement AS sa ON a.contract_code = sa.contract_code " +
+                    "JOIN execution_stages AS es ON sa.code_execution = es.code_execution " +
+                    "JOIN payment AS p ON a.contract_code = p.contract_code ");
 
-            FileWriter fileWriter = new FileWriter(  "C:/Users/shere/IdeaProjects/CourseWork/src/main/resources/com/example/coursework/reports/Report_on_Contract_Details");
+            if (!column2.isEmpty()) {
+                sqlQuery.append("where ").append(column2).append(" ").append(where);
+            }
+
+            if (filter.equals("По убыванию")) {
+                sqlQuery.append(" ORDER BY ").append(column).append(" desc");
+            } else {
+                sqlQuery.append(" ORDER BY ").append(column);
+            }
+
+            PreparedStatement statement = connection.prepareStatement(String.valueOf(sqlQuery));
+
+
+            ResultSet resultSet = statement.executeQuery();
+
+            FileWriter fileWriter = new FileWriter("C:/Users/shere/IdeaProjects/CourseWork/src/main/resources/com/example/coursework/reports/Report_on_Contract_Details.txt");
             while (resultSet.next()) {
                 String contractCode = resultSet.getString("contract_code");
                 int stageNum = resultSet.getInt("stage_num");
@@ -62,9 +79,8 @@ public class ReportSQL implements SQLForReports {
         }
     }
 
-
     @Override
-    public void secondReport() {
+    public void secondReport(String column, String filter, String column2, String where) {
         connect();
         try {
             Connection connection = DriverManager.getConnection(ctDB.getUrl(),
@@ -72,14 +88,24 @@ public class ReportSQL implements SQLForReports {
 
             Statement statement = connection.createStatement();
 
-            String sqlQuery = "SELECT a.contract_code, sa.stage_num, sa.date_execution AS stage_date, sa.stage_amount, sa.advance_amount, tp.name_type_payment " +
+            StringBuilder sqlQuery = new StringBuilder("SELECT a.contract_code, sa.stage_num, sa.date_execution AS stage_date, sa.stage_amount, sa.advance_amount, tp.name_type_payment " +
                     "FROM agreements AS a " +
-                    "LEFT JOIN stage_agreement AS sa ON a.contract_code = sa.contract_code " +
-                    "LEFT JOIN type_payments AS tp ON sa.code_execution = tp.code_type_payment " +
-                    "ORDER BY a.contract_code, sa.stage_num";
-            ResultSet resultSet = statement.executeQuery(sqlQuery);
+                    "JOIN stage_agreement AS sa ON a.contract_code = sa.contract_code " +
+                    "JOIN type_payments AS tp ON sa.code_execution = tp.code_type_payment ");
 
-            FileWriter fileWriter = new FileWriter("C:/Users/shere/IdeaProjects/CourseWork/src/main/resources/com/example/coursework/reports/Planned_Payments");
+            if (!column2.isEmpty()) {
+                sqlQuery.append("where ").append(column2).append(" ").append(where);
+            }
+
+            if (filter.equals("По убыванию")) {
+                sqlQuery.append(" ORDER BY ").append(column).append(" desc");
+            } else {
+                sqlQuery.append(" ORDER BY ").append(column);
+            }
+
+            ResultSet resultSet = statement.executeQuery(String.valueOf(sqlQuery));
+
+            FileWriter fileWriter = new FileWriter("C:/Users/shere/IdeaProjects/CourseWork/src/main/resources/com/example/coursework/reports/Planned_Payments.txt");
             while (resultSet.next()) {
                 String contractCode = resultSet.getString("contract_code");
                 int stageNum = resultSet.getInt("stage_num");
@@ -107,7 +133,7 @@ public class ReportSQL implements SQLForReports {
     }
 
     @Override
-    public void thirdReport() {
+    public void thirdReport(String column, String filter, String column2, String where) {
         connect();
         try {
             Connection connection = DriverManager.getConnection(ctDB.getUrl(),
@@ -115,14 +141,24 @@ public class ReportSQL implements SQLForReports {
 
             Statement statement = connection.createStatement();
 
-            String sqlQuery = "SELECT a.contract_code, p.date_payment, p.sum_payment, tp.name_type_payment " +
+            StringBuilder sqlQuery = new StringBuilder("SELECT a.contract_code, p.date_payment, p.sum_payment, tp.name_type_payment " +
                     "FROM agreements AS a " +
-                    "LEFT JOIN payment AS p ON a.contract_code = p.contract_code " +
-                    "LEFT JOIN type_payments AS tp ON p.code_type_payment = tp.code_type_payment " +
-                    "ORDER BY a.contract_code, p.date_payment";
-            ResultSet resultSet = statement.executeQuery(sqlQuery);
+                    "JOIN payment AS p ON a.contract_code = p.contract_code " +
+                    "JOIN type_payments AS tp ON p.code_type_payment = tp.code_type_payment ");
 
-            FileWriter fileWriter = new FileWriter("C:/Users/shere/IdeaProjects/CourseWork/src/main/resources/com/example/coursework/reports/Actual_Payments");
+            if (!column2.isEmpty()) {
+                sqlQuery.append("where ").append(column2).append(" ").append(where);
+            }
+
+            if (filter.equals("По убыванию")) {
+                sqlQuery.append(" ORDER BY ").append(column).append(" desc");
+            } else {
+                sqlQuery.append(" ORDER BY ").append(column);
+            }
+
+            ResultSet resultSet = statement.executeQuery(String.valueOf(sqlQuery));
+
+            FileWriter fileWriter = new FileWriter("C:/Users/shere/IdeaProjects/CourseWork/src/main/resources/com/example/coursework/reports/Actual_Payments.txt");
             while (resultSet.next()) {
                 String contractCode = resultSet.getString("contract_code");
                 Date paymentDate = resultSet.getDate("date_payment");
@@ -136,7 +172,6 @@ public class ReportSQL implements SQLForReports {
                 fileWriter.write("--------------------\n");
             }
 
-            // Step 5: Close the resources
             resultSet.close();
             statement.close();
             connection.close();

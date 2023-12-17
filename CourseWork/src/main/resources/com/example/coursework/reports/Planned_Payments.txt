@@ -1,0 +1,14 @@
+Contract Code: 8
+Stage Num: 1
+Stage Date: 2024-01-01
+Stage Amount: 1000.0
+Advance Amount: 500.0
+Type of Payment: Постоплата
+--------------------
+Contract Code: 9
+Stage Num: 2
+Stage Date: 2024-02-01
+Stage Amount: 2000.0
+Advance Amount: 1000.0
+Type of Payment: Бесплатная оплата
+--------------------

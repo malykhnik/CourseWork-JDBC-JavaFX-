@@ -1,0 +1,18 @@
+Contract Code: 11
+Stage Num: 4
+Stage Date: 2024-04-01
+Stage Name: Разрешение споров
+Stage Amount: 2500.0
+Advance Amount: 1250.0
+Payment Date: 2024-07-01
+Payment Sum: 800.0
+--------------------
+Contract Code: 9
+Stage Num: 2
+Stage Date: 2024-02-01
+Stage Name: Исполнение договора
+Stage Amount: 2000.0
+Advance Amount: 1000.0
+Payment Date: 2024-04-01
+Payment Sum: 2500.0
+--------------------

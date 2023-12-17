@@ -1,0 +1,60 @@
+Contract Code: 13
+Payment Date: 2024-10-01
+Payment Sum: 3000.0
+Type of Payment: Полная предоплата
+--------------------
+Contract Code: 14
+Payment Date: 2024-01-15
+Payment Sum: 2500.0
+Type of Payment: Частичная предоплата
+--------------------
+Contract Code: 9
+Payment Date: 2024-04-01
+Payment Sum: 2500.0
+Type of Payment: Частичная предоплата
+--------------------
+Contract Code: 8
+Payment Date: 2024-02-01
+Payment Sum: 2000.0
+Type of Payment: Полная предоплата
+--------------------
+Contract Code: 10
+Payment Date: 2024-06-01
+Payment Sum: 1800.0
+Type of Payment: Рассрочка
+--------------------
+Contract Code: 14
+Payment Date: 2024-02-15
+Payment Sum: 1800.0
+Type of Payment: Рассрочка
+--------------------
+Contract Code: 8
+Payment Date: 2024-03-01
+Payment Sum: 1500.0
+Type of Payment: Бесплатная оплата
+--------------------
+Contract Code: 16
+Payment Date: 2024-04-15
+Payment Sum: 1500.0
+Type of Payment: Рассрочка
+--------------------
+Contract Code: 10
+Payment Date: 2024-05-01
+Payment Sum: 1200.0
+Type of Payment: Полная предоплата
+--------------------
+Contract Code: 16
+Payment Date: 2024-03-15
+Payment Sum: 1200.0
+Type of Payment: Рассрочка
+--------------------
+Contract Code: 17
+Payment Date: 2024-06-15
+Payment Sum: 1100.0
+Type of Payment: Постоплата
+--------------------
+Contract Code: 13
+Payment Date: 2024-09-01
+Payment Sum: 1100.0
+Type of Payment: Постоплата
+--------------------

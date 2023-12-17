@@ -1,27 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.VBox?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.collections.FXCollections?>
-<?import java.lang.String?>
-<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.Controllers.CtrlForReports.CtrlFirstReport">
+<VBox prefHeight="253.0" prefWidth="264.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.Controllers.CtrlForReports.CtrlFirstReport">
 
-    <Button text="Исполнить" onAction="#button1Clicked" />
+    <Button onAction="#button1Clicked" text="Исполнить" />
 
     <ChoiceBox fx:id="choiceBox">
         <items>
             <FXCollections fx:factory="observableArrayList">
-                <String fx:value="code_nds" />
-                <String fx:value="percent" />
+                <String fx:value="stage_num" />
+                <String fx:value="stage_date" />
+                <String fx:value="stage_name" />
+                <String fx:value="stage_amount" />
+                <String fx:value="advance_amount" />
+                <String fx:value="date_payment" />
+                <String fx:value="sum_payment" />
             </FXCollections>
         </items>
     </ChoiceBox>
 
-    <TextField fx:id="txtField" promptText="Введите данные" />
+    <ChoiceBox fx:id="choiceBox1">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="По убыванию" />
+                <String fx:value="По возрастанию" />
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+
+    <ChoiceBox fx:id="choiceBox2">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="stage_num" />
+                <String fx:value="stage_date" />
+                <String fx:value="stage_name" />
+                <String fx:value="stage_amount" />
+                <String fx:value="advance_amount" />
+                <String fx:value="date_payment" />
+                <String fx:value="sum_payment" />
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+
+    <TextField fx:id="txtField" promptText="Введите условие для where ( условие значение)" />
 
 
 </VBox>

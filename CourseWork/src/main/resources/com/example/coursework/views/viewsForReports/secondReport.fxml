@@ -9,19 +9,41 @@
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
 <VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.Controllers.CtrlForReports.CtrlSecondReport">
-
     <Button text="Исполнить" onAction="#button1Clicked" />
 
     <ChoiceBox fx:id="choiceBox">
         <items>
             <FXCollections fx:factory="observableArrayList">
-                <String fx:value="code_nds" />
-                <String fx:value="percent" />
+                <String fx:value="stage_num" />
+                <String fx:value="stage_date" />
+                <String fx:value="stage_amount" />
+                <String fx:value="advance_amount" />
+                <String fx:value="name_type_payment" />
             </FXCollections>
         </items>
     </ChoiceBox>
 
-    <TextField fx:id="txtField" promptText="Введите данные" />
+    <ChoiceBox fx:id="choiceBox1">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="По убыванию" />
+                <String fx:value="По возрастанию" />
+            </FXCollections>
+        </items>
+    </ChoiceBox>
 
+    <ChoiceBox fx:id="choiceBox2">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="stage_num" />
+                <String fx:value="stage_date" />
+                <String fx:value="stage_amount" />
+                <String fx:value="advance_amount" />
+                <String fx:value="name_type_payment" />
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+
+    <TextField fx:id="txtField" promptText="Введите условие для where ( условие значение)" />
 
 </VBox>
